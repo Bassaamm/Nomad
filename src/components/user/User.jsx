@@ -1,19 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./User.module.css";
 import { logOutApiAuth } from "../../service/supabaseAuthAPI";
+import { useLogout } from "../../auth/useLogout";
 
 function User() {
   const navigate = useNavigate();
-  function handleClick() {
-    logOutApiAuth();
-    navigate("/");
-  }
+  const { logout, isLoading } = useLogout();
 
   return (
     <div className={styles.user}>
       <img src="\download.png" alt="avatar" />
       <span>Welcome, Bassam</span>
-      <button onClick={handleClick}>Logout</button>
+      <button onClick={logout}>Logout</button>
     </div>
   );
 }
