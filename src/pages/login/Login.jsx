@@ -45,6 +45,7 @@ export default function Login() {
             <input
               {...register("password", { required: "password is required :)" })}
               id="password"
+              type="password"
               value={password}
               className="text-gray-700 font-semibold"
             />
