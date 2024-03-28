@@ -7,17 +7,17 @@ export default function Homepage() {
     <main className={styles.homepage}>
       <PageNav />
       <section>
-        <h1>
+        <p className="lg:text-7xl text-6xl">
           With Nomad, you can keep a record of your around the world journeys
           <br />
-        </h1>
-        <h2>
+        </p>
+        <p className="text-2xl lg:text-3xl">
           A world map that shows every city you have visited and the memories
           you have made there.
           <br />
           Share your wanderlust with your friends and never forget your amazing
           experiences.
-        </h2>
+        </p>
         <Link to="/login" className="cta">
           Start tracking now
         </Link>

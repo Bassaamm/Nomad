@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styles from "./Login.module.css";
 import PageNav from "../../components/pagenav/PageNav";
 import Button from "../../components/button/Button";
-// import { useAuth } from "../../context/FakeAuthContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useUser } from "../../auth/useUser";
@@ -13,7 +12,6 @@ export default function Login() {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
 
-  // const { login, isAuthenticated } = useAuth();
   const { isAuthenticated } = useUser();
   const { mutate } = useLoginUser();
   useEffect(() => {
@@ -25,11 +23,11 @@ export default function Login() {
     mutate({ email, password });
   }
   return (
-    <main className={styles.login}>
+    <main className="min-h-screen bg-[var(--color-dark--1)] p-12">
       <PageNav />
-      <div>
+      <div className="flex items-center justify-center h-[70vh] w-full">
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          <div className={styles.row}>
+          <div>
             <label htmlFor="email">Email address</label>
             <input
               {...register("email", { required: "email is required :)" })}
@@ -40,7 +38,7 @@ export default function Login() {
             />
           </div>
 
-          <div className={styles.row}>
+          <div>
             <label htmlFor="password">Password</label>
             <input
               {...register("password", { required: "password is required :)" })}
@@ -50,7 +48,7 @@ export default function Login() {
               className="text-gray-700 font-semibold"
             />
           </div>
-          <div className={styles.flex}>
+          <div>
             <Button style="primary">Login</Button>
           </div>
         </form>

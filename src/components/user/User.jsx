@@ -1,11 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import styles from "./User.module.css";
-import { logOutApiAuth } from "../../service/supabaseAuthAPI";
 import { useLogout } from "../../auth/useLogout";
 
 function User() {
-  const navigate = useNavigate();
-  const { logout, isLoading } = useLogout();
+  const { logout } = useLogout();
 
   return (
     <div className={styles.user}>
