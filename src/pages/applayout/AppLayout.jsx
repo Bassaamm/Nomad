@@ -5,13 +5,15 @@ import styles from "./AppLayout.module.css";
 export default function AppLayout() {
   return (
     <>
-      <div className={`${styles.app} hidden lg:block`}>
-        <SideBar />
-        <Map />
-        <User />
+      <div className="lg:block hidden">
+        <div className={styles.app}>
+          <SideBar />
+          <Map />
+          <User />
+        </div>
       </div>
-      <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl">
-        This application is not available for mobile screens
+      <div className={styles.mobileOverlay}>
+        This application is only available for large screens.
       </div>
     </>
   );
