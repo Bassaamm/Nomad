@@ -11,7 +11,7 @@ export default function AppLayout() {
         <User />
       </div>
       <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl">
-        This application is not available for mobile screens.
+        This application is not available for mobile screens
       </div>
     </>
   );
